@@ -1,1 +1,2 @@
-console.log('May the node be woth you';
+const express = require('express');
+const app = express();
