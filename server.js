@@ -5,6 +5,7 @@ const MongoClient = require('mongodb').MongoClient;
 const app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
+app.set('view engine', 'ejs');
 
 var db;
 //server
@@ -17,9 +18,11 @@ MongoClient.connect('mongodb://localhost/test-crud', (err, database) => {
 })
 
 app.get('/', (req, res) => {
-  // res.sendFile(__dirname + '/index.html');
-  var cursor = db.collection('quotes').find().toArray(( err, results) => {
-    console.log( results);
+  var cursor = db.collection('quotes').find().toArray( ( err, result) => {
+    if (err) return console.log(err);
+
+    //render index.ejs
+    res.render('index.ejs', {quotes: result});
   })
 
 })
