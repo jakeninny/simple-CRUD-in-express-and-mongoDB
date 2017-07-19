@@ -1,5 +1,6 @@
-console.log('js working');
+
 var update = document.querySelector('#update');
+
 
 update.addEventListener('click', function (e) {
   //send PUT request
