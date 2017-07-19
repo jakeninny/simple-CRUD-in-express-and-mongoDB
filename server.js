@@ -17,7 +17,11 @@ MongoClient.connect('mongodb://localhost/test-crud', (err, database) => {
 })
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+  // res.sendFile(__dirname + '/index.html');
+  var cursor = db.collection('quotes').find().toArray(( err, results) => {
+    console.log( results);
+  })
+
 })
 
 app.post('/quotes', (req, res) => {
