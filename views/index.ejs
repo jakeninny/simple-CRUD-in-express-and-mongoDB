@@ -10,7 +10,7 @@
   <ul class="quotes">
   <% for(var i=0; i<quotes.length; i++) {%>
     <li class="quote">
-      <span><%= quotes[i].name %></span>
+      <span><%= quotes[i].name %></span> -
       <span><%= quotes[i].quote %></span>
     </li>
   <% } %>
@@ -23,9 +23,16 @@
   </form>
 
   <div>
-    <h2>Replace last quote by yoda with a quote by Darth Vadar...</h2>
+    <h2>Replace last quote by yoda with a quote by Darth Vader...</h2>
     <button id="update" name="button">Darth Button</button>
   </div>
+
+  <div>
+    <h2>Delete Darth's first quote </h2>
+    <button id="delete" name="button">Darth Delete</button>
+  </div>
+
+
 </body>
 <script type="text/javascript" src="main.js"></script>
 </html>
