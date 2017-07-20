@@ -36,6 +36,6 @@ del.addEventListener('click', function (e) {
   })
   .then( data => {
     console.log(data);
-    window.location.redload(true);
+    window.location.reload(true);
   })
 });
